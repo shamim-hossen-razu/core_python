@@ -1,0 +1,14 @@
+README.md
+setup.py
+local_math_library/__init__.py
+local_math_library/advanced_math.py
+local_math_library/basic_math.py
+local_math_library.egg-info/PKG-INFO
+local_math_library.egg-info/SOURCES.txt
+local_math_library.egg-info/dependency_links.txt
+local_math_library.egg-info/top_level.txt
+local_math_library/geometry/__init__.py
+local_math_library/geometry/circle.py
+local_math_library/geometry/square.py
+local_math_library/geometry/analytic_geometry/__init__.py
+local_math_library/geometry/analytic_geometry/coordinates.py

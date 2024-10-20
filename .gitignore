@@ -2,3 +2,7 @@
     __pycache__/
     *.py[cod]
     *$py.class
+    # Build and distribution directories
+    build/
+    dist/
+    local_math_library.egg-info/
