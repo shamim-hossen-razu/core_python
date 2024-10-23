@@ -1,101 +1,157 @@
-# All about strings in Python
+# Comprehensive Guide to Python Strings
 
-# Creating strings
-single_quoted = 'Hello, World!'
-double_quoted = "Hello, World!"
-triple_quoted = '''This is a
-multi-line string'''
+# 1. String Creation
+simple_string = "Hello, World!"  # Using double quotes
+another_string = 'Python is great'  # Using single quotes
+multi_line_string = """This is a
+multi-line string."""  # Using triple quotes for multi-line strings
 
-print("Creating strings:")
-print(single_quoted)
-print(double_quoted)
-print(triple_quoted)
+print("String Creation:")
+print(simple_string)
+print(another_string)
+print(multi_line_string)
 
-# String concatenation
-str1 = "Hello"
-str2 = "World"
-concatenated = str1 + " " + str2
-print("\nConcatenation:", concatenated)
+# 2. String Indexing and Slicing
+print("\nString Indexing and Slicing:")
+# Indexing: accessing individual characters
+print("First character:", simple_string[0])  # Prints 'H'
+print("Last character:", simple_string[-1])  # Prints '!'
 
-# String repetition
-repeated = "Echo " * 3
-print("Repetition:", repeated)
+# Slicing: extracting a portion of the string
+print("Slicing (3:8):", simple_string[3:8])  # Prints 'lo, W'
+print("Slicing with step (::2):", simple_string[::2])  # Prints 'Hlo ol!' (every second character)
+print("Reverse string:", simple_string[::-1])  # Prints '!dlroW ,olleH'
 
-# String indexing and slicing
-sample = "Python"
-print("\nIndexing and Slicing:")
-print("First character:", sample[0])
-print("Last character:", sample[-1])
-print("Slicing (1:4):", sample[1:4])
-print("Reverse:", sample[::-1])
+# 3. String Manipulation
+print("\nString Manipulation:")
+# Concatenation
+first_name = "John"
+last_name = "Doe"
+full_name = first_name + " " + last_name
+print("Concatenated string:", full_name)
 
-# String methods
-text = "  Python is awesome!  "
-print("\nString methods:")
-print("Upper:", text.upper())
-print("Lower:", text.lower())
-print("Capitalize:", text.capitalize())
-print("Title:", text.title())
-print("Strip:", text.strip())
-print("Replace:", text.replace("awesome", "amazing"))
-print("Split:", text.split())
-print("Join:", "-".join(["Python", "is", "fun"]))
+# Repetition
+repeated_string = "Echo " * 3
+print("Repeated string:", repeated_string)
 
-# String formatting
+# 4. String Methods
+print("\nString Methods:")
+sample_string = "  Python is Awesome!  "
+
+# Case manipulation
+print("Lowercase:", sample_string.lower())
+print("Uppercase:", sample_string.upper())
+print("Title case:", sample_string.title())
+print("Swapcase:", sample_string.swapcase())
+
+# Whitespace removal
+print("Strip:", sample_string.strip())
+print("Left Strip:", sample_string.lstrip())
+print("Right Strip:", sample_string.rstrip())
+
+# Searching and replacing
+print("Replace:", sample_string.replace("Awesome", "Amazing"))
+print("Count 'is':", sample_string.count('is'))
+print("Find 'is':", sample_string.find('is'))
+print("Right find 'is':", sample_string.rfind('is'))
+
+# Splitting and joining
+words = sample_string.split()
+print("Split:", words)
+print("Join:", "-".join(words))
+
+# Checking string properties
+print("Is alphanumeric:", "Python3".isalnum())
+print("Is alphabetic:", "Python".isalpha())
+print("Is digit:", "12345".isdigit())
+print("Starts with 'Py':", sample_string.strip().startswith("Py"))
+print("Ends with '!':", sample_string.strip().endswith("!"))
+
+# 5. String Formatting
+print("\nString Formatting:")
 name = "Alice"
 age = 30
-print("\nString formatting:")
-print("Using %: My name is %s and I'm %d years old." % (name, age))
-print("Using format(): My name is {} and I'm {} years old.".format(name, age))
-print(f"Using f-strings: My name is {name} and I'm {age} years old.")
 
-# Other useful string methods
-sample_text = "hello, world! how are you?"
-print("\nOther useful methods:")
-print("Count 'o':", sample_text.count('o'))
-print("Find 'world':", sample_text.find('world'))
-print("Is alphanumeric:", sample_text.isalnum())
-print("Is alpha:", sample_text.isalpha())
-print("Is digit:", sample_text.isdigit())
-print("Is lower:", sample_text.islower())
-print("Is upper:", sample_text.isupper())
-print("Is space:", sample_text.isspace())
-print("Starts with 'hello':", sample_text.startswith('hello'))
-print("Ends with '?':", sample_text.endswith('?'))
+# Using f-strings (Python 3.6+)
+formatted_string = f"{name} is {age} years old."
+print("F-string:", formatted_string)
 
-# String encoding and decoding
-encoded = "Pythön".encode('utf-8')
-decoded = encoded.decode('utf-8')
-print("\nEncoding and Decoding:")
+# Using .format() method
+formatted_string = "{} is {} years old.".format(name, age)
+print("Format method:", formatted_string)
+
+# Using % operator (older style)
+formatted_string = "%s is %d years old." % (name, age)
+print("% operator:", formatted_string)
+
+# 6. String Iteration
+print("\nString Iteration:")
+for char in "Python":
+    print(char, end=" ")
+print()  # New line
+
+# 7. String Comparison
+print("\nString Comparison:")
+string1 = "apple"
+string2 = "banana"
+print("apple == banana:", string1 == string2)
+print("apple < banana:", string1 < string2)  # Lexicographical comparison
+
+# 8. Escape Characters
+print("\nEscape Characters:")
+print("New line:\nSecond line")
+print("Tab:\tIndented")
+print("Backslash: \\")
+print("Quote: \"")
+
+# 9. Raw Strings
+print("\nRaw Strings:")
+raw_string = r"C:\Users\John\Documents"
+print("Raw string:", raw_string)
+
+# 10. String Encoding and Decoding
+print("\nString Encoding and Decoding:")
+encoded = "Python".encode('utf-8')
 print("Encoded:", encoded)
+decoded = encoded.decode('utf-8')
 print("Decoded:", decoded)
 
-# String comparison
-str_a = "apple"
-str_b = "banana"
-print("\nString comparison:")
-print("apple == banana:", str_a == str_b)
-print("apple < banana:", str_a < str_b)
+# 11. Real-life String Problem: Parsing a CSV-like string
+print("\nReal-life String Problem: Parsing a CSV-like string")
+csv_string = "John,Doe,30,New York"
+parsed_data = csv_string.split(',')
+print("Parsed CSV:", parsed_data)
 
-# Raw strings
-raw_string = r"This is a raw string\n"
-print("\nRaw string:", raw_string)
+# 12. Advanced String Methods
+print("\nAdvanced String Methods:")
+text = "Python is a versatile programming language."
+print("Center:", text.center(50, '-'))
+print("Partition:", text.partition('versatile'))
+print("Translate:", text.translate(str.maketrans('aeiou', '12345')))
 
-# String constants
-import string
-print("\nString constants:")
-print("ASCII letters:", string.ascii_letters)
-print("Digits:", string.digits)
-print("Punctuation:", string.punctuation)
+# 13. String Immutability
+print("\nString Immutability:")
+s = "Hello"
+# s[0] = 'h'  # This would raise an error
+s = 'h' + s[1:]  # This creates a new string
+print("Modified string:", s)
 
-# String alignment
-text = "Python"
-print("\nString alignment:")
-print("Center:", text.center(20, '*'))
-print("Left justify:", text.ljust(20, '-'))
-print("Right justify:", text.rjust(20, '+'))
+# 14. String Interpolation (Python 3.6+)
+print("\nString Interpolation:")
+x = 10
+y = 20
+print(f"The sum of {x} and {y} is {x + y}")
 
-# String translation
-trans_table = str.maketrans("aeiou", "12345")
-translated = "hello world".translate(trans_table)
-print("\nString translation:", translated)
+# 15. Multi-line String as Documentation
+def example_function():
+    """
+    This is a multi-line string used as a docstring.
+    It can span multiple lines and is used to document
+    functions, classes, and modules.
+    """
+    pass
+
+print("\nDocstring:")
+print(example_function.__doc__)
+
+
